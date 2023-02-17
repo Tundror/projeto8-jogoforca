@@ -6,7 +6,7 @@ export default function Jogo(){
                 <img src={forca0} alt="forca" className="forcaImg"></img>
             </div>
             <div className="containerBotaoJogo">
-                <button>Escolher Palavra</button>
+                <button className="escolherPalavra">Escolher Palavra</button>
             </div>
         </div>
 
