@@ -1,0 +1,24 @@
+.forcaImg{
+    width: 400px;
+}
+.containerJogo{
+    display: flex;
+    justify-content: space-between;
+}
+.containerForcaImg{
+    margin-left: 38px;
+    margin-top: 59px;
+}
+.containerBotaoJogo{
+    margin-top: 89px;
+    margin-right: 53px;
+}
+button{
+    width: 200px;
+    height: 60px;
+    background: #27AE60;
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+    color: white;
+}
