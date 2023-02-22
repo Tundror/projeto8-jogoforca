@@ -1,4 +1,4 @@
-import forca0 from "./assets/forca0.png"
+
 export default function Jogo(props){
     function escolherPalavra(){
         const alterar = false
@@ -10,7 +10,7 @@ export default function Jogo(props){
     return(
         <div className="containerJogo">
             <div className="containerForcaImg">
-                <img src={forca0} alt="forca" className="forcaImg"></img>
+                <img src={props.forcas[props.erros]} alt="forca" className="forcaImg"></img>
             </div>
             <div className="containerPalavraBotao">
                 <div className="containerBotaoJogo">

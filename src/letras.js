@@ -11,13 +11,14 @@ export default function Letras(props){
 
 function Alfabeto(props){
     function escolherLetra(){
+        
         const numErros = props.erros + 1;
         props.setErros(numErros);
         console.log(numErros)
     }
     return(
             <div className={`containerLetra ${props.habilitarLetras ? "desabilitado" : ""}`}>
-                <button onClick={escolherLetra} disabled={props.habilitarLetras} className={`botaoLetra ${props.habilitarLetras ? "desabilitado" : ""}`}>{props.letra}</button>
+                <button onClick={escolherLetra} disabled={props.habilitarLetras} className={`botaoLetra ${props.habilitarLetras || props.habilitarLetra ? "desabilitado" : ""}`}>{props.letra}</button>
             </div>
     )
 }
