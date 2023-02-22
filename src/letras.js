@@ -3,7 +3,7 @@ export default function Letras(props){
     return(
         <div className="alfabeto">
             <div className="containerAlfabeto">
-                {alfabeto.map((a) => <Alfabeto erros={props.erros} setErros={props.setErros} habilitarLetras={props.habilitarLetras} letra={a}/>)}
+                {alfabeto.map((a) => <Alfabeto tracinho={props.tracinho} setTracinho={props.setTracinho} setHabilitarLetra={props.setHabilitarLetra} palavraInicial={props.palavraInicial} erros={props.erros} setErros={props.setErros} habilitarLetra={props.habilitarLetra} habilitarLetras={props.habilitarLetras} letra={a}/>)}
             </div>
         </div>
     )
@@ -11,14 +11,22 @@ export default function Letras(props){
 
 function Alfabeto(props){
     function escolherLetra(){
+        const alterar=true
+        if(props.palavraInicial.includes(props.letra)){
+            props.setHabilitarLetra(alterar)
+            console.log(alterar)
+        }
+        else{
+            const numErros = props.erros + 1;
+            props.setErros(numErros);
+            props.setHabilitarLetra(alterar)
+            console.log(props.habilitarLetra)
+        }
         
-        const numErros = props.erros + 1;
-        props.setErros(numErros);
-        console.log(numErros)
     }
     return(
             <div className={`containerLetra ${props.habilitarLetras ? "desabilitado" : ""}`}>
-                <button onClick={escolherLetra} disabled={props.habilitarLetras} className={`botaoLetra ${props.habilitarLetras || props.habilitarLetra ? "desabilitado" : ""}`}>{props.letra}</button>
+                <button onClick={escolherLetra} disabled={props.habilitarLetras ? true : false} className={`botaoLetra ${props.habilitarLetras ? "desabilitado" : props.habilitarLetra ? "desabilitado" : ""}`}>{props.letra}</button>
             </div>
     )
 }

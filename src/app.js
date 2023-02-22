@@ -15,15 +15,16 @@ export default function App() {
   const [habilitarLetras, setHabilitarLetras] = useState(true)
   const [habilitarLetra, setHabilitarLetra] = useState(false)
   const [erros, setErros] = useState(0)
-  let palavra = palavras[Math.floor(Math.random() * palavras.length)];
-  const arrayPalavra = palavra.split('');
-  console.log(arrayPalavra)
-  const novaArrayPalavra = arrayPalavra.map((p) => p="_")
+  const [palavraFinal, setPalavraFinal] = useState(palavras[Math.floor(Math.random() * palavras.length)])
+  const [palavraInicial, setPalavraInicial] = useState(palavras[Math.floor(Math.random() * palavras.length)])
+  const [tracinho, setTracinho] = useState("_")
+  
+  
   
   return (
     <div className="container">
-      <Jogo habilitarLetra={habilitarLetra} setHabilitarLetra={setHabilitarLetra} forcas={forcas} arrayPalavra={arrayPalavra} novaArrayPalavra={novaArrayPalavra} palavras={palavras} erros={erros} setErros={setErros} habilitarLetras={habilitarLetras} setHabilitarLetras={setHabilitarLetras}/>
-      <Letras habilitarLetra={habilitarLetra} setHabilitarLetra={setHabilitarLetra} forcas={forcas} arrayPalavra={arrayPalavra} novaArrayPalavra={novaArrayPalavra} erros={erros} setErros={setErros} habilitarLetras={habilitarLetras} setHabilitarLetras={setHabilitarLetras}/>
+      <Jogo tracinho={tracinho} setTracinho={setTracinho} palavraInicial={palavraInicial} setPalavraInicial={setPalavraInicial} palavraFinal={palavraFinal} setPalavraFinal={setPalavraFinal} habilitarLetra={habilitarLetra} setHabilitarLetra={setHabilitarLetra} forcas={forcas} palavras={palavras} erros={erros} setErros={setErros} habilitarLetras={habilitarLetras} setHabilitarLetras={setHabilitarLetras}/>
+      <Letras tracinho={tracinho} setTracinho={setTracinho} palavraInicial={palavraInicial} setPalavraInicial={setPalavraInicial} palavraFinal={palavraFinal} setPalavraFinal={setPalavraFinal} habilitarLetra={habilitarLetra} setHabilitarLetra={setHabilitarLetra} forcas={forcas} erros={erros} setErros={setErros} habilitarLetras={habilitarLetras} setHabilitarLetras={setHabilitarLetras}/>
     </div>
   );
 }

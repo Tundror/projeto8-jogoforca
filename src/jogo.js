@@ -1,9 +1,15 @@
 
 export default function Jogo(props){
     function escolherPalavra(){
+        const palavra = props.palavras[Math.floor(Math.random() * props.palavras.length)];
+        const arrayPalavra = palavra.split('');
+        const novaArrayPalavra = arrayPalavra.map((p) => p="_")
         const alterar = false
         props.setHabilitarLetras(alterar)
-        console.log(alterar)
+        props.setPalavraFinal(novaArrayPalavra.join(' '))
+        props.setPalavraInicial(arrayPalavra)
+        props.setErros(0)
+        console.log(arrayPalavra)
     }
     
     
@@ -17,7 +23,7 @@ export default function Jogo(props){
                     <button onClick={escolherPalavra} className="escolherPalavra">Escolher Palavra</button>
                 </div>
                 <div className={`containerPalavra ${props.habilitarLetras ? "sumir" : ""}`}>
-                    {props.novaArrayPalavra.join(' ')}
+                    {props.palavraFinal}
                 </div>
             </div>
         </div>
