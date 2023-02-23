@@ -19,7 +19,7 @@ function Alfabeto(props){
             compararLetra(props.letra)
             console.log(props.arrayPalavraFinal)
             console.log(props.palavraInicial)
-            if(props.palavraFinal == props.palavraInicial){
+            if(props.arrayPalavraFinal == props.palavraInicial){
                 console.log("ganhou!")
             }
         }
@@ -44,6 +44,7 @@ function Alfabeto(props){
                 
             }   
         }
+        props.setArrayPalavraFinal(array)
         props.setPalavraFinal(array.join(' '))
     }
     return(
