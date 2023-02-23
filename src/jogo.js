@@ -22,13 +22,13 @@ export default function Jogo(props){
     return(
         <div className="containerJogo">
             <div className="containerForcaImg">
-                <img src={props.forcas[props.erros]} alt="forca" className="forcaImg"></img>
+                <img data-test="game-image" src={props.forcas[props.erros]} alt="forca" className="forcaImg"></img>
             </div>
             <div className="containerPalavraBotao">
                 <div className="containerBotaoJogo">
-                    <button onClick={escolherPalavra} className="escolherPalavra">Escolher Palavra</button>
+                    <button data-test="choose-word" onClick={escolherPalavra} className="escolherPalavra">Escolher Palavra</button>
                 </div>
-                <div className={`containerPalavra ${props.aparecerLetras ? "" : "sumir"} ${props.ganhou ? "verde" : ""} ${props.perdeu ? "vermelho" : ""}`}>
+                <div data-test="word" className={`containerPalavra ${props.aparecerLetras ? "" : "sumir"} ${props.ganhou ? "verde" : ""} ${props.perdeu ? "vermelho" : ""}`}>
                     {props.perdeu ? props.palavraInicial : props.palavraFinal}
                 </div>
             </div>
