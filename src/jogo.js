@@ -4,6 +4,7 @@ export default function Jogo(props){
         const palavra = props.palavras[Math.floor(Math.random() * props.palavras.length)];
         const arrayPalavra = palavra.split('');
         const novaArrayPalavra = arrayPalavra.map((p) => p="_")
+        props.setArrayPalavraFinal(novaArrayPalavra)
         const alterar = false
         props.setHabilitarLetras(alterar)
         props.setPalavraFinal(novaArrayPalavra.join(' '))
