@@ -37,19 +37,12 @@ body{
     
 }
 .containerLetra{
-    box-sizing: border-box;
-    width: 40px;
-    height: 40px;
     background: #E1ECF4;
-    border: 1px solid #7AA7C7;
-    border-radius: 3px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.containerLetra:hover{
-    cursor: pointer;
-}
+
 .containerAlfabeto{
     display: flex;
     gap: 12px;
@@ -60,6 +53,11 @@ button{
     border:none;
 }
 .botaoLetra{
+    border: 1px solid #7AA7C7;
+    border-radius: 3px;
+    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
     background-color: #E1ECF4;
     font-family: 'Roboto';
     font-style: normal;
