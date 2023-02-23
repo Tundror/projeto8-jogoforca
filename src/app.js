@@ -13,11 +13,9 @@ import forca6 from "./assets/forca6.png"
 export default function App() {
   const forcas = [forca0, forca1, forca2, forca3, forca4, forca5, forca6]
   const [habilitarLetras, setHabilitarLetras] = useState(true)
-  const [habilitarLetra, setHabilitarLetra] = useState(false)
   const [erros, setErros] = useState(0)
   const [palavraFinal, setPalavraFinal] = useState(palavras[Math.floor(Math.random() * palavras.length)])
   const [palavraInicial, setPalavraInicial] = useState(palavras[Math.floor(Math.random() * palavras.length)])
-  const [tracinho, setTracinho] = useState("_")
   const [arrayPalavraFinal, setArrayPalavraFinal] = useState('')
   const [letrasClicadas, setLetrasClicadas] = useState([])
   const [ganhou, setGanhou] = useState(false)
@@ -27,8 +25,8 @@ export default function App() {
   
   return (
     <div className="container">
-      <Jogo ganhou={ganhou} setGanhou={setGanhou} perdeu={perdeu} setPerdeu={setPerdeu} arrayPalavraFinal={arrayPalavraFinal} setArrayPalavraFinal={setArrayPalavraFinal} tracinho={tracinho} setTracinho={setTracinho} palavraInicial={palavraInicial} setPalavraInicial={setPalavraInicial} palavraFinal={palavraFinal} setPalavraFinal={setPalavraFinal} habilitarLetra={habilitarLetra} setHabilitarLetra={setHabilitarLetra} forcas={forcas} palavras={palavras} erros={erros} setErros={setErros} habilitarLetras={habilitarLetras} setHabilitarLetras={setHabilitarLetras}/>
-      <Letras ganhou={ganhou} setGanhou={setGanhou} perdeu={perdeu} setPerdeu={setPerdeu} letrasClicadas={letrasClicadas} setLetrasClicadas={setLetrasClicadas} arrayPalavraFinal={arrayPalavraFinal} setArrayPalavraFinal={setArrayPalavraFinal} tracinho={tracinho} setTracinho={setTracinho} palavraInicial={palavraInicial} setPalavraInicial={setPalavraInicial} palavraFinal={palavraFinal} setPalavraFinal={setPalavraFinal} habilitarLetra={habilitarLetra} setHabilitarLetra={setHabilitarLetra} forcas={forcas} erros={erros} setErros={setErros} habilitarLetras={habilitarLetras} setHabilitarLetras={setHabilitarLetras}/>
+      <Jogo ganhou={ganhou} setGanhou={setGanhou} perdeu={perdeu} setPerdeu={setPerdeu} arrayPalavraFinal={arrayPalavraFinal} setArrayPalavraFinal={setArrayPalavraFinal} palavraInicial={palavraInicial} setPalavraInicial={setPalavraInicial} palavraFinal={palavraFinal} setPalavraFinal={setPalavraFinal} forcas={forcas} palavras={palavras} erros={erros} setErros={setErros} habilitarLetras={habilitarLetras} setHabilitarLetras={setHabilitarLetras}/>
+      <Letras ganhou={ganhou} setGanhou={setGanhou} perdeu={perdeu} setPerdeu={setPerdeu} letrasClicadas={letrasClicadas} setLetrasClicadas={setLetrasClicadas} arrayPalavraFinal={arrayPalavraFinal} setArrayPalavraFinal={setArrayPalavraFinal} palavraInicial={palavraInicial} setPalavraInicial={setPalavraInicial} palavraFinal={palavraFinal} setPalavraFinal={setPalavraFinal} forcas={forcas} erros={erros} setErros={setErros} habilitarLetras={habilitarLetras} setHabilitarLetras={setHabilitarLetras}/>
     </div>
   );
 }
