@@ -47,6 +47,9 @@ body{
     justify-content: center;
     align-items: center;
 }
+.containerLetra:hover{
+    cursor: pointer;
+}
 .containerAlfabeto{
     display: flex;
     gap: 12px;

@@ -52,7 +52,7 @@ function Alfabeto(props){
         props.setPalavraFinal(array.join(' '))
     }
     return(
-            <div className={`containerLetra ${props.habilitarLetras ? "desabilitado" : props.letrasClicadas.includes(props.letra) ? "desabilitado" : ""}`}>
+            <div onClick={escolherLetra} className={`containerLetra ${props.habilitarLetras ? "desabilitado" : props.letrasClicadas.includes(props.letra) ? "desabilitado" : ""}`}>
                 <button onClick={escolherLetra} disabled={props.resetar ? false : props.habilitarLetras ? true : props.letrasClicadas.includes(props.letra) ? true : false} className={`botaoLetra ${props.habilitarLetras ? "desabilitado" : props.letrasClicadas.includes(props.letra) ? "desabilitado" : props.resetar ? "" : ""}`}>{props.letra}</button>
             </div>
     )
