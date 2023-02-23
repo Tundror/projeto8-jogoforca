@@ -7,9 +7,14 @@ export default function Jogo(props){
         props.setArrayPalavraFinal(novaArrayPalavra)
         const alterar = false
         props.setHabilitarLetras(alterar)
+        props.setAparecerLetras(true)
         props.setPalavraFinal(novaArrayPalavra.join(' '))
         props.setPalavraInicial(arrayPalavra)
         props.setErros(0)
+        props.setGanhou(false)
+        props.setPerdeu(false)
+        props.setResetar(true)
+        props.setLetrasClicadas("")
         console.log(arrayPalavra)
     }
     
@@ -23,8 +28,8 @@ export default function Jogo(props){
                 <div className="containerBotaoJogo">
                     <button onClick={escolherPalavra} className="escolherPalavra">Escolher Palavra</button>
                 </div>
-                <div className={`containerPalavra ${props.habilitarLetras ? "sumir" : ""}`}>
-                    {props.palavraFinal}
+                <div className={`containerPalavra ${props.aparecerLetras ? "" : "sumir"} ${props.ganhou ? "verde" : ""} ${props.perdeu ? "vermelho" : ""}`}>
+                    {props.perdeu ? props.palavraInicial : props.palavraFinal}
                 </div>
             </div>
         </div>

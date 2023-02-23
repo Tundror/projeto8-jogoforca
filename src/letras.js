@@ -3,7 +3,7 @@ export default function Letras(props){
     return(
         <div className="alfabeto">
             <div className="containerAlfabeto">
-                {alfabeto.map((a) => <Alfabeto key={a} setHabilitarLetras={props.setHabilitarLetras} ganhou={props.ganhou} setGanhou={props.setGanhou} perdeu={props.perdeu} setPerdeu={props.setPerdeu} letrasClicadas={props.letrasClicadas} setLetrasClicadas={props.setLetrasClicadas} arrayPalavraFinal={props.arrayPalavraFinal} setArrayPalavraFinal={props.setArrayPalavraFinal} palavraFinal={props.palavraFinal} setPalavraFinal={props.setPalavraFinal} palavraInicial={props.palavraInicial} erros={props.erros} setErros={props.setErros} habilitarLetras={props.habilitarLetras} letra={a}/>)}
+                {alfabeto.map((a) => <Alfabeto resetar={props.resetar} setResetar={props.setResetar} key={a} setHabilitarLetras={props.setHabilitarLetras} ganhou={props.ganhou} setGanhou={props.setGanhou} perdeu={props.perdeu} setPerdeu={props.setPerdeu} letrasClicadas={props.letrasClicadas} setLetrasClicadas={props.setLetrasClicadas} arrayPalavraFinal={props.arrayPalavraFinal} setArrayPalavraFinal={props.setArrayPalavraFinal} palavraFinal={props.palavraFinal} setPalavraFinal={props.setPalavraFinal} palavraInicial={props.palavraInicial} erros={props.erros} setErros={props.setErros} habilitarLetras={props.habilitarLetras} letra={a}/>)}
             </div>
         </div>
     )
@@ -11,6 +11,8 @@ export default function Letras(props){
 
 function Alfabeto(props){
     function escolherLetra(){
+        console.log(props.resetar)
+        props.setResetar(false)
         const alterar=true
         const clicada = [...props.letrasClicadas]
         clicada.push(props.letra)
@@ -19,8 +21,10 @@ function Alfabeto(props){
             compararLetra(props.letra)
             console.log(props.arrayPalavraFinal)
             console.log(props.palavraInicial)
-            if(props.arrayPalavraFinal == props.palavraInicial){
+            if(!props.arrayPalavraFinal.includes("_")){
                 console.log("ganhou!")
+                props.setGanhou(true)
+                props.setHabilitarLetras(true)
             }
         }
         else{
@@ -49,7 +53,7 @@ function Alfabeto(props){
     }
     return(
             <div className={`containerLetra ${props.habilitarLetras ? "desabilitado" : props.letrasClicadas.includes(props.letra) ? "desabilitado" : ""}`}>
-                <button onClick={escolherLetra} disabled={props.habilitarLetras ? true : props.letrasClicadas.includes(props.letra) ? true : false} className={`botaoLetra ${props.habilitarLetras ? "desabilitado" : props.letrasClicadas.includes(props.letra) ? "desabilitado" : ""}`}>{props.letra}</button>
+                <button onClick={escolherLetra} disabled={props.resetar ? false : props.habilitarLetras ? true : props.letrasClicadas.includes(props.letra) ? true : false} className={`botaoLetra ${props.habilitarLetras ? "desabilitado" : props.letrasClicadas.includes(props.letra) ? "desabilitado" : props.resetar ? "" : ""}`}>{props.letra}</button>
             </div>
     )
 }

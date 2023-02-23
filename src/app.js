@@ -20,13 +20,15 @@ export default function App() {
   const [letrasClicadas, setLetrasClicadas] = useState([])
   const [ganhou, setGanhou] = useState(false)
   const [perdeu, setPerdeu] = useState(false)
+  const [aparecerLetras, setAparecerLetras] = useState(false)
+  const [resetar, setResetar] = useState(false)
   
   
   
   return (
     <div className="container">
-      <Jogo ganhou={ganhou} setGanhou={setGanhou} perdeu={perdeu} setPerdeu={setPerdeu} arrayPalavraFinal={arrayPalavraFinal} setArrayPalavraFinal={setArrayPalavraFinal} palavraInicial={palavraInicial} setPalavraInicial={setPalavraInicial} palavraFinal={palavraFinal} setPalavraFinal={setPalavraFinal} forcas={forcas} palavras={palavras} erros={erros} setErros={setErros} habilitarLetras={habilitarLetras} setHabilitarLetras={setHabilitarLetras}/>
-      <Letras ganhou={ganhou} setGanhou={setGanhou} perdeu={perdeu} setPerdeu={setPerdeu} letrasClicadas={letrasClicadas} setLetrasClicadas={setLetrasClicadas} arrayPalavraFinal={arrayPalavraFinal} setArrayPalavraFinal={setArrayPalavraFinal} palavraInicial={palavraInicial} setPalavraInicial={setPalavraInicial} palavraFinal={palavraFinal} setPalavraFinal={setPalavraFinal} forcas={forcas} erros={erros} setErros={setErros} habilitarLetras={habilitarLetras} setHabilitarLetras={setHabilitarLetras}/>
+      <Jogo resetar={resetar} setResetar={setResetar} aparecerLetras={aparecerLetras} setAparecerLetras={setAparecerLetras} ganhou={ganhou} setGanhou={setGanhou} perdeu={perdeu} setPerdeu={setPerdeu} letrasClicadas={letrasClicadas} setLetrasClicadas={setLetrasClicadas} arrayPalavraFinal={arrayPalavraFinal} setArrayPalavraFinal={setArrayPalavraFinal} palavraInicial={palavraInicial} setPalavraInicial={setPalavraInicial} palavraFinal={palavraFinal} setPalavraFinal={setPalavraFinal} forcas={forcas} palavras={palavras} erros={erros} setErros={setErros} habilitarLetras={habilitarLetras} setHabilitarLetras={setHabilitarLetras}/>
+      <Letras resetar={resetar} setResetar={setResetar} aparecerLetras={aparecerLetras} setAparecerLetras={setAparecerLetras} ganhou={ganhou} setGanhou={setGanhou} perdeu={perdeu} setPerdeu={setPerdeu} letrasClicadas={letrasClicadas} setLetrasClicadas={setLetrasClicadas} arrayPalavraFinal={arrayPalavraFinal} setArrayPalavraFinal={setArrayPalavraFinal} palavraInicial={palavraInicial} setPalavraInicial={setPalavraInicial} palavraFinal={palavraFinal} setPalavraFinal={setPalavraFinal} forcas={forcas} erros={erros} setErros={setErros} habilitarLetras={habilitarLetras} setHabilitarLetras={setHabilitarLetras}/>
     </div>
   );
 }
